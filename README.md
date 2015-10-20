@@ -17,4 +17,3 @@ If you choose to install my tmux configs:
 2. `cd` into it and run `./install`
 3. It'll ask which parts you want to install (git configs, vim configs, tmux configs)
 4. After it's done close your terminal and reopen it 3 times... ok, just once.
-tests commit
