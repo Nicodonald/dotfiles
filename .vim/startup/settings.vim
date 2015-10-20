@@ -22,7 +22,7 @@ set relativenumber
 set nowritebackup
 
 set completeopt=menu
-set mousemodel=popup
+" set mousemodel=popup
 set backspace=2
 set number
 set nocompatible
