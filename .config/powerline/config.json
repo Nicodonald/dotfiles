@@ -4,8 +4,8 @@
     },
     "ext": {
         "shell": {
-            "theme": "sbiddle",
-            "colorscheme": "default"
+            "theme": "default",
+            "colorscheme": "sbiddle"
         },
         "tmux": {
             "colorscheme": "default",

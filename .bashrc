@@ -1,7 +1,7 @@
 # .bashrc
 export EDITOR="vim"
 
-set -o vi
+#set -o vi
 
 for i in ~/completion/*; do
 	. $i
@@ -35,7 +35,7 @@ cat /dev/null > ~/.prev_dir
 
 eval "$(dircolors ~/.bash/.DIR_COLORS)"
 
-TERM=xterm-256color
+#TERM=xterm-256color
 
 # {{{
 # Node Completion - Auto-generated, do not touch.
