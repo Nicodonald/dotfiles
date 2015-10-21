@@ -1,4 +1,5 @@
 "============== General Settings ===============
+set foldlevel=999
 set dict=/usr/share/dict/words
 set cursorline
 set showcmd
