@@ -55,8 +55,8 @@ nmap gv guiW
 nmap ]c ]czz
 nmap [c [czz
 
-" default to very magic
-no / /\v
+" default to case unsensitive
+no / /\c
 
 " gO to create a new line below cursor in normal mode
 nmap g<C-O> o<ESC>k
