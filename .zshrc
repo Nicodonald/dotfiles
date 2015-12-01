@@ -1,6 +1,17 @@
 TERM=xterm-256color
-source ~/antigen/antigen.zsh
+# If not running interactively, do not do anything
+if [[ -z "$TMUX" ]]; then
+    tmux has-session &> /dev/null
+    if [ $? -eq 1 ]; then
+      exec tmux new
+      exit
+    else
+      exec tmux attach
+      exit
+    fi
+fi
 
+source ~/antigen/antigen.zsh
 # Load the oh-my-zsh's library.
 antigen use oh-my-zsh
 
@@ -15,20 +26,17 @@ antigen bundle colorize
 antigen bundle compleat
 antigen bundle cp
 antigen bundle vundle
-
-
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
-# Load the theme.
-#antigen theme robbyrussell
-
-# Tell antigen that you're done.
+#
+## Syntax highlighting bundle.
+#antigen bundle zsh-users/zsh-syntax-highlighting
+#
+## Load the theme.
+##antigen theme robbyrussell
+#
+## Tell antigen that you're done.
 antigen apply
+powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 POWERLINE_NO_SHELL_ABOVE=1
 . /usr/share/zsh/site-contrib/powerline.zsh
-# If not running interactively, do not do anything
- [[ $- != *i* ]] && return
- [[ -z "$TMUX" ]] && exec tmux

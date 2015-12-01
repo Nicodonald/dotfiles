@@ -4,10 +4,11 @@ INSTALLDIR=${1:-$HOME}
 if [ "$1" == "-h" ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
     echo "$0 <dotfiles install dir>"
     echo "Existing dotfiles will be moved to <filename>.old"
+    echo "require vim, xclip, tmux, python pip"
     exit
 fi
 
-for i in .bash  .bash_logout  .bashrc  bin  completion 
+for i in .bash  .bash_logout  .bashrc  bin  completion .zshrc
 do
 	mv $INSTALLDIR/$i $INSTALLDIR/$i.old 2> /dev/null
 	ln -s $PWD/$i $INSTALLDIR/$i;

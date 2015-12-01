@@ -1,5 +1,6 @@
 # .bashrc
 export EDITOR="vim"
+TERM=xterm-256color
 
 #set -o vi
 
@@ -35,7 +36,6 @@ cat /dev/null > ~/.prev_dir
 
 eval "$(dircolors ~/.bash/.DIR_COLORS)"
 
-TERM=xterm-256color
 
 # {{{
 # Node Completion - Auto-generated, do not touch.
