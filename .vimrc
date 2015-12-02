@@ -14,6 +14,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Bundle "shawncplus/skittles_berry"
 Bundle "scrooloose/nerdtree"
+Bundle "easymotion/vim-easymotion"
 
 call vundle#end()
 
