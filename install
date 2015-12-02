@@ -22,6 +22,7 @@ if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
     mv $INSTALLDIR/.vimrc $INSTALLDIR/.vimrc.old
 	ln -s $PWD/.vim $INSTALLDIR/.vim 2> /dev/null
 	ln -s $PWD/.vimrc $INSTALLDIR/.vimrc 2> /dev/null
+    git clone https://github.com/VundleVim/Vundle.vim.git $INSTALLDIR/.vim/bundle/Vundle.vim
 fi
 echo
 
