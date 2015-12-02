@@ -52,3 +52,6 @@ source ~/.vim/startup/php.vim
 source ~/.vim/startup/vim.vim
 source ~/.vim/startup/yaml.vim
 source ~/.vim/startup/html.vim
+
+" guter color same as background
+highlight clear SignColumn
