@@ -1,10 +1,6 @@
 # .bashrc
 export EDITOR="vim"
 TERM=xterm-256color
-<<<<<<< HEAD
-=======
-
->>>>>>> e3598fdafc95e277de50a2ce4a2b5fdf59adaed6
 #set -o vi
 
 for i in ~/completion/*; do
