@@ -16,6 +16,7 @@ Bundle "shawncplus/skittles_berry"
 Bundle "scrooloose/nerdtree"
 Bundle "easymotion/vim-easymotion"
 Bundle "tpope/vim-fugitive"
+Bundle "gregsexton/gitv"
 
 call vundle#end()
 
