@@ -17,6 +17,7 @@ Bundle "scrooloose/nerdtree"
 Bundle "easymotion/vim-easymotion"
 Bundle "tpope/vim-fugitive"
 Bundle "gregsexton/gitv"
+Bundle "shawncplus/phpcomplete.vim"
 
 call vundle#end()
 
