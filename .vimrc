@@ -18,6 +18,7 @@ Bundle "easymotion/vim-easymotion"
 Bundle "tpope/vim-fugitive"
 Bundle "gregsexton/gitv"
 Bundle "shawncplus/phpcomplete.vim"
+Bundle "airblade/vim-gitgutter"
 
 call vundle#end()
 
