@@ -1,5 +1,27 @@
 "Pathogen
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Bundle "shawncplus/skittles_berry"
+Bundle "scrooloose/nerdtree"
+Bundle "easymotion/vim-easymotion"
+Bundle "tpope/vim-fugitive"
+Bundle "gregsexton/gitv"
+Bundle "shawncplus/phpcomplete.vim"
+Bundle "airblade/vim-gitgutter"
+Bundle "nathanaelkane/vim-indent-guides"
+
+call vundle#end()
 
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
@@ -31,3 +53,6 @@ source ~/.vim/startup/php.vim
 source ~/.vim/startup/vim.vim
 source ~/.vim/startup/yaml.vim
 source ~/.vim/startup/html.vim
+
+" guter color same as background
+highlight clear SignColumn

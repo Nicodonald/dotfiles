@@ -1,7 +1,6 @@
 # .bashrc
 export EDITOR="vim"
 TERM=xterm-256color
-
 #set -o vi
 
 for i in ~/completion/*; do
@@ -21,6 +20,16 @@ fi
 # custom functions
 if [ -f /home/$USER/.bash/aliases ]; then
 	. /home/$USER/.bash/aliases
+fi
+if [[ -z "$TMUX" ]]; then
+    tmux has-session &> /dev/null
+    if [ $? -eq 1 ]; then
+      exec tmux new
+      exit
+    else
+      exec tmux attach
+      exit
+    fi
 fi
 
 export PATH=$PATH":/home/$USER/bin/:/home/$USER/.local/bin"
