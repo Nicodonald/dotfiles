@@ -21,7 +21,7 @@ alias sudo="sudo "
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle systemd
-antigen bundle colored-man
+antigen bundle colored-man-pages
 antigen bundle colorize
 antigen bundle compleat
 antigen bundle cp
@@ -39,4 +39,4 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 POWERLINE_NO_SHELL_ABOVE=1
-. /usr/share/zsh/site-contrib/powerline.zsh
+. ~/repos/powerline/powerline/bindings/zsh/powerline.zsh
