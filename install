@@ -58,9 +58,10 @@ if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
         git clone https://github.com/powerline/powerline.git $HOME/repos/powerline
     fi
 
-	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
+#	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
 	mv $INSTALLDIR/.tmux.conf $INSTALLDIR/.tmux.conf.old 2> /dev/null
-    ln -s $PWD/.config $INSTALLDIR/.config
+    mkdir -p $HOME/.config/powerline 2> /dev/null
+    ln -s $PWD/.config/powerline $INSTALLDIR/.config/powerline
     ln -s $PWD/.tmux.conf $INSTALLDIR/.tmux.conf
     mkdir -p $HOME/.local/bin/
     pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
