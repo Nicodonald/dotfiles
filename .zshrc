@@ -21,7 +21,7 @@ alias sudo="sudo "
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle systemd
-antigen bundle colored-man
+antigen bundle colored-man-pages
 antigen bundle colorize
 antigen bundle compleat
 antigen bundle cp
