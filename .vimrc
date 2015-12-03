@@ -20,6 +20,7 @@ Bundle "gregsexton/gitv"
 Bundle "shawncplus/phpcomplete.vim"
 Bundle "airblade/vim-gitgutter"
 Bundle "nathanaelkane/vim-indent-guides"
+Bundle "chrisbra/SudoEdit.vim"
 
 call vundle#end()
 
