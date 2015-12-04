@@ -1,4 +1,6 @@
 "============== General Settings ===============
+set ignorecase
+set smartcase
 set foldlevel=999
 set dict=/usr/share/dict/words
 set cursorline
