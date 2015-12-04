@@ -20,7 +20,6 @@ if &diff
 endif
 set diffopt+=iwhite
 let &scrolloff=999-&scrolloff
-set smartcase
 set relativenumber
 set nowritebackup
 
