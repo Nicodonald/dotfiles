@@ -1,4 +1,5 @@
 "============== General Settings ===============
+set hlsearch
 set ignorecase
 set smartcase
 set foldlevel=999
