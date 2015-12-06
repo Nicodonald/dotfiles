@@ -24,7 +24,7 @@ noremap <F7> :set expandtab!<CR>
 nmap <Leader>h :tabnew %:h<CR>
 
 "turn off search highlighting
-nmap <C-n> :noh<CR>
+"nmap <C-n> :noh<CR>
 
 "custom comma motion mapping
 nmap di, f,dT,
@@ -55,8 +55,9 @@ nmap gv guiW
 nmap ]c ]czz
 nmap [c [czz
 
-" default to case unsensitive
-"no / /\c
+"buffer next and previous
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
 
 " gO to create a new line below cursor in normal mode
 nmap g<C-O> o<ESC>k
