@@ -8,7 +8,7 @@ if [ "$1" == "-h" ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
     exit
 fi
 
-for i in .bash  .bash_logout  .bashrc  bin  completion .zshrc
+for i in .bash  .bash_logout  .bashrc  completion
 do
 	mv $INSTALLDIR/$i $INSTALLDIR/$i.old 2> /dev/null
 	ln -s $PWD/$i $INSTALLDIR/$i;
@@ -44,6 +44,7 @@ fi
 if [ ! -d $INSTALLDIR/.node-completion ]; then
 	mkdir $INSTALLDIR/.node-completion
 fi
+echo
 
 echo -en "\nDo you want to use my tmux configs? [N/y]"
 read -n 1 use_tmux_configs
@@ -67,7 +68,16 @@ if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
     pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
     pip install --user pytz
 fi
+echo
+echo -en "\nDo you want to use my zsh configs? [N/y]"
+read -n 1 use_zsh_configs
 
+if [ "$use_zsh_configs" == "Y" ] || [ "$use_zsh_configs" == "y" ]; then
+    mv $INSTALLDIR/.zshrc $INSTALLDIR/.zshrc.old 2> /dev/null
+	ln -s $PWD/.zshrc $INSTALLDIR/.zshrc 2> /dev/null
+    git clone https://github.com/zsh-users/antigen.git $INSTALLDIR/antigen
+fi
+echo
 #echo -e "\nInitializing submodules..."
 #git submodule init && git submodule update
 #
