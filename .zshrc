@@ -1,4 +1,4 @@
-TERM=screen-256color
+TERM=xterm-256color
 # If not running interactively, do not do anything
 if [[ -z "$TMUX" ]]; then
     tmux has-session &> /dev/null
@@ -26,6 +26,7 @@ antigen bundle colorize
 antigen bundle compleat
 antigen bundle cp
 antigen bundle vundle
+antigen bundle yum
 #
 ## Syntax highlighting bundle.
 #antigen bundle zsh-users/zsh-syntax-highlighting
