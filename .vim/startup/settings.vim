@@ -28,6 +28,7 @@ set completeopt=menu
 set backspace=2
 set number
 set nocompatible
+set noshowmode
 
 " Hack to make sql in php hilighting suck less
 let sql_type_default = 'sqlanywhere'
