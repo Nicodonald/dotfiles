@@ -1,6 +1,8 @@
 [user]
   name = %%GITNAME%%
   email = %%GITEMAIL%%
+[push]
+  default = simple
 [diff]
   external = git_diff_wrapper
 [pager]
