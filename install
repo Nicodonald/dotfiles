@@ -61,7 +61,7 @@ if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
 
 #	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
 	mv $INSTALLDIR/.tmux.conf $INSTALLDIR/.tmux.conf.old 2> /dev/null
-    mkdir -p $HOME/.config/powerline 2> /dev/null
+    #mkdir -p $HOME/.config/powerline 2> /dev/null
     ln -s $PWD/.config/powerline $INSTALLDIR/.config/powerline
     ln -s $PWD/.tmux.conf $INSTALLDIR/.tmux.conf
     mkdir -p $HOME/.local/bin/
