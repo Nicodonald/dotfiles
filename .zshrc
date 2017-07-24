@@ -1,5 +1,6 @@
 TERM=xterm-256color
 # If not running interactively, do not do anything
+export PATH=$PATH":/home/$USER/bin:/home/$USER/.local/bin"
 if [[ -z "$TMUX" ]]; then
     tmux has-session &> /dev/null
     if [ $? -eq 1 ]; then

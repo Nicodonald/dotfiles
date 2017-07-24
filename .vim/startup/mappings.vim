@@ -14,6 +14,7 @@ vno <up> <Nop>
 
 "============== Custom Mappings ===============
 " general mapping
+ino jk <esc>
 nmap <C-Tab> :tabnext<CR>
 nmap <C-S-Tab> :tabprevious<CR>
 map <C-S-Tab> :tabprevious<CR>
