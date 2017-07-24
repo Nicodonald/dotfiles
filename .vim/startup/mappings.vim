@@ -47,6 +47,9 @@ noremap cs) F(xf)xi
 nmap cu ct_
 nmap cU cf_
 
+" toggle Nerdtree
+noremap <C-e> :NERDTreeToggle<CR>
+
 " upper or lowercase the current word
 nmap g^ gUiW
 nmap gv guiW

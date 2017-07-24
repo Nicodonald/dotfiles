@@ -40,4 +40,5 @@ powerline-daemon -q
 POWERLINE_BASH_CONTINUATION=1
 POWERLINE_BASH_SELECT=1
 POWERLINE_NO_SHELL_ABOVE=1
-. ~/repos/powerline/powerline/bindings/zsh/powerline.zsh
+. /usr/share/zsh/site-contrib/powerline.zsh
+#. ~/repos/powerline/powerline/bindings/zsh/powerline.zsh

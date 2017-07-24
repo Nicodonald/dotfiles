@@ -94,9 +94,9 @@ set -g set-titles on
 set -g set-titles-string '#S:#I.#P #W'
 
 # powerline setup
-source "/usr/lib/python2.7/site-packages/powerline/bindings/tmux/powerline.conf"
-source "/usr/lib/python2.7/site-packages/powerline/bindings/tmux/powerline_tmux_1.8_plus.conf"
-source "/usr/lib/python2.7/site-packages/powerline/bindings/tmux/powerline_tmux_1.9_plus.conf"
+source "$HOME/repos/powerline/powerline/bindings/tmux/powerline.conf"
+source "$HOME/repos/powerline/powerline/bindings/tmux/powerline_tmux_1.8_plus.conf"
+source "$HOME/repos/powerline/powerline/bindings/tmux/powerline_tmux_1.9_plus.conf"
 
 # Notifying if other windows has activities
 setw -g monitor-activity on
@@ -111,10 +111,13 @@ setw -g clock-mode-style 24
 
 # Windows
 #set -g mouse-select-window on
+<<<<<<< HEAD
 set -g mouse on
+=======
+#set -g mouse on
+setw -g mouse on
+>>>>>>> cc4a556c245aa3b4f3ca6dcc51e6fe1bfdc89ba3
 
-# Start copy mode when scrolling up
-bind -n WheelUpPane copy-mode
 # " windowlist -b
 unbind '"'
 bind '"' choose-window
@@ -127,9 +130,9 @@ bind k select-pane -U
 bind l select-pane -R
 bind-key -r C-h select-window -t :-
 bind-key -r C-l select-window -t :+
-#bind -t vi-copy v begin-selection
-#bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard'
-#bind -t vi-copy Escape cancel
+bind -t vi-copy v begin-selection
+bind -t vi-copy y copy-pipe 'xclip -in -selection clipboard'
+bind -t vi-copy Escape cancel
 bind C-p run "xclip -o | tmux load-buffer - ; tmux paste-buffer"
 
 setw -g display-panes-time 2000
