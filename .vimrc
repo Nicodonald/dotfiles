@@ -1,5 +1,3 @@
-"Pathogen
-"call pathogen#runtime_append_all_bundles()
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
