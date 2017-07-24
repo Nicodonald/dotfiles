@@ -10,15 +10,15 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-Bundle "shawncplus/skittles_berry"
-Bundle "scrooloose/nerdtree"
-Bundle "easymotion/vim-easymotion"
-Bundle "tpope/vim-fugitive"
-Bundle "gregsexton/gitv"
-Bundle "shawncplus/phpcomplete.vim"
-Bundle "airblade/vim-gitgutter"
-Bundle "nathanaelkane/vim-indent-guides"
-Bundle "chrisbra/SudoEdit.vim"
+Plugin 'shawncplus/skittles_berry'
+Plugin 'scrooloose/nerdtree'
+Plugin 'easymotion/vim-easymotion'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gregsexton/gitv'
+Plugin 'shawncplus/phpcomplete.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'chrisbra/SudoEdit.vim'
 
 call vundle#end()
 
