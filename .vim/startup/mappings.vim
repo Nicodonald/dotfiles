@@ -50,6 +50,7 @@ nmap cU cf_
 
 " toggle Nerdtree
 noremap <C-e> :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " upper or lowercase the current word
 nmap g^ gUiW
