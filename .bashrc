@@ -39,7 +39,7 @@ if hash tmux 2>/dev/null; then
  fi
 fi
 
-export PATH=$PATH":/home/$USER/bin/:/home/$USER/.local/bin"
+export PATH=$PATH":$HOME/bin/:$HOME/.local/bin"
 
 if [ -f ~/.local/bin/powerline-daemon ]; then 
  powerline-daemon -q
