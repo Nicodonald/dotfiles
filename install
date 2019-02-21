@@ -8,6 +8,22 @@ if [ "$1" == "-h" ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
     echo "require vim, xclip, tmux, python pip"
     exit
 fi
+echo -n "Do you want to use powerline ? [N/y]"
+read -n 1 use_powerline
+
+if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
+    if [ ! -d $HOME/repos ]; then
+        mkdir $HOME/repos
+    fi
+
+    if [ ! -d $HOME/repos/powerline ]; then
+        echo -e "\nCloning  powerline"
+        git clone https://github.com/powerline/powerline.git $HOME/repos/powerline
+    fi
+    mkdir -p $HOME/.local/bin/
+    pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
+    pip install --user pytz
+fi
 
 echo -n "Do you want to use my bash configs? [N/y]"
 read -n 1 use_bash_configs
@@ -30,7 +46,7 @@ if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
     mv $INSTALLDIR/.vimrc $INSTALLDIR/.vimrc.old
 	ln -s $SCRIPTDIR/.vim $INSTALLDIR/.vim 2> /dev/null
 	ln -s $SCRIPTDIR/.vimrc $INSTALLDIR/.vimrc 2> /dev/null
-    git clone https://github.com/VundleVim/Vundle.vim.git $INSTALLDIR/.vim/bundle/Vundle.vim
+    git clone https://github.com/VundleVim/Vundle.vim.git $SCRIPTDIR/.vim/bundle/Vundle.vim
     vim -c "PluginInstall" -c "qa!"
 fi
 echo
@@ -59,23 +75,11 @@ echo -en "\nDo you want to use my tmux configs? [N/y]"
 read -n 1 use_tmux_configs
 
 if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
-    if [ ! -d $HOME/repos ]; then
-        mkdir $HOME/repos
-    fi
-
-    if [ ! -d $HOME/repos/powerline ]; then
-        echo -e "\nCloning  powerline"
-        git clone https://github.com/powerline/powerline.git $HOME/repos/powerline
-    fi
-
 #	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
 	mv $INSTALLDIR/.tmux.conf $INSTALLDIR/.tmux.conf.old 2> /dev/null
     #mkdir -p $HOME/.config/powerline 2> /dev/null
     ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline
     ln -s $SCRIPTDIR/.tmux.conf $INSTALLDIR/.tmux.conf
-    mkdir -p $HOME/.local/bin/
-    pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
-    pip install --user pytz
 fi
 echo
 echo -en "\nDo you want to use my zsh configs? [N/y]"
