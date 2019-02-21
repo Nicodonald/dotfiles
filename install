@@ -21,8 +21,11 @@ if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
         git clone https://github.com/powerline/powerline.git $HOME/repos/powerline
     fi
     mkdir -p $HOME/.local/bin/
-    pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
-    pip install --user pytz
+    if hash pip; then
+     pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
+     pip install --user pytz
+ else echo "python pip is not installed"
+    fi
 fi
 
 echo -n "Do you want to use my bash configs? [N/y]"
