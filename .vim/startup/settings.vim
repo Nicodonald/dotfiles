@@ -36,6 +36,12 @@ let sql_type_default = 'sqlanywhere'
 set enc=utf-8
 set fillchars=vert:¦
 
+"Open new split panes to right and bottom, which feels more natural than Vim’s
+"default:
+
+set splitbelow
+set splitright
+
 set expandtab
 set tabstop=4
 set shiftwidth=4
