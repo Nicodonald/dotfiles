@@ -24,25 +24,28 @@ fi
 
 #if tmux present then launch it
 if hash tmux 2>/dev/null; then  
- if [[ -z "$TMUX" ]]; then
-      tmux has-session &> /dev/null
-      if [ $? -eq 1 ]; then
-        exec tmux new
-        exit
-      else
-        exec tmux attach
-        exit
-     fi
+#if not running interactively do not do anything
+ if ! [[ $- != *i* ]]; then
+  if [[ -z "$TMUX" ]]; then
+       tmux has-session &> /dev/null
+       if [ $? -eq 1 ]; then
+         exec tmux new
+         exit
+       else
+         exec tmux attach
+         exit
+      fi
+  fi
  fi
 fi
 
 export PATH=$PATH":/home/$USER/bin/:/home/$USER/.local/bin"
 
-if hash powerline-daemon 2>/dev/null; then 
+if [ -f ~/.local/bin/powerline-daemon ]; then 
  powerline-daemon -q
  POWERLINE_BASH_CONTINUATION=1
  POWERLINE_BASH_SELECT=1
- # sources debian
+ # repos cloné à l'installation
  if [ -f ~/repos/powerline/powerline/bindings/bash/powerline.sh ]; then  
 	 source ~/repos/powerline/powerline/bindings/bash/powerline.sh
  fi  
