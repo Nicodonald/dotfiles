@@ -1,6 +1,6 @@
 # common aliases
 
-alias clear='echo -e "\e[2J"'
+#alias clear='echo -e "\e[2J"'
 alias ls='ls --color=always'
 alias ll='ls -AFlh --group-directories-first'
 alias lf='ll -rt'

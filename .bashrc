@@ -21,27 +21,35 @@ fi
 if [ -f /home/$USER/.bash/aliases ]; then
 	. /home/$USER/.bash/aliases
 fi
+
+#if tmux present then launch it
+if hash tmux 2>/dev/null; then  
  if [[ -z "$TMUX" ]]; then
-     tmux has-session &> /dev/null
-     if [ $? -eq 1 ]; then
-       exec tmux new
-       exit
-     else
-       exec tmux attach
-       exit
+      tmux has-session &> /dev/null
+      if [ $? -eq 1 ]; then
+        exec tmux new
+        exit
+      else
+        exec tmux attach
+        exit
      fi
  fi
+fi
 
 export PATH=$PATH":/home/$USER/bin/:/home/$USER/.local/bin"
 
-# powerline-daemon -q
-# POWERLINE_BASH_CONTINUATION=1
-# POWERLINE_BASH_SELECT=1
-# POWERLINE_NO_SHELL_ABOVE=1
-# . ~/repos/powerline/powerline/bindings/bash/powerline.sh
+if hash powerline-daemon 2>/dev/null; then 
+ powerline-daemon -q
+ POWERLINE_BASH_CONTINUATION=1
+ POWERLINE_BASH_SELECT=1
+ # sources debian
+ if [ -f ~/repos/powerline/powerline/bindings/bash/powerline.sh ]; then  
+	 source ~/repos/powerline/powerline/bindings/bash/powerline.sh
+ fi  
+fi
 
-cd `cat ~/.prev_dir`
-cat /dev/null > ~/.prev_dir
+#cd `cat ~/.prev_dir`
+#cat /dev/null > ~/.prev_dir
 
 eval "$(dircolors ~/.bash/.DIR_COLORS)"
 

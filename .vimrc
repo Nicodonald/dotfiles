@@ -9,7 +9,8 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'shawncplus/skittles_berry'
 Plugin 'scrooloose/nerdtree'
 Plugin 'easymotion/vim-easymotion'
@@ -23,6 +24,15 @@ Plugin 'chrisbra/SudoEdit.vim'
 call vundle#end()
 
 
+"============== StatusLine ===================
+let g:airline_powerline_fonts = 1
+let g:airline_theme='distinguished'
+"set rtp+=~/repos/powerline/powerline/bindings/vim/
+"python3 from powerline.vim import setup as powerline_setup
+"python3 powerline_setup()
+"python3 del powerline_setup
+"set laststatus=2 " Always display the statusline in all windows
+"set t_Co=256
 
 "============== Custom scripts ===============
 source ~/.vim/after/syntaxcheck.vim
