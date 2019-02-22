@@ -24,6 +24,8 @@ Plugin 'chrisbra/SudoEdit.vim'
 call vundle#end()
 
 
+"============== Silence theme error===========
+silent! colorscheme skittles_berry
 "============== StatusLine ===================
 let g:airline_powerline_fonts = 1
 let g:airline_theme='distinguished'
