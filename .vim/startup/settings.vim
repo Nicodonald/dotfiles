@@ -98,6 +98,8 @@ let g:vdebug_options= {
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 0
 
+silent! let g:indent_guides_enable_on_vim_startup = 1
+
 let g:phpcomplete_parse_docblock_comments = 1
 
 let g:indent_guides_auto_colors = 0
