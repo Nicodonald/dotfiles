@@ -12,7 +12,7 @@ fi
 #read -n 1 use_powerline
 #
 #if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
-    if [ ! -d $HOME/repos ]; then
+   if [ ! -d $HOME/repos ]; then
         mkdir $HOME/repos
     fi
 
@@ -26,6 +26,14 @@ fi
      pip install --user pytz
  else echo "python pip is not installed"
     fi
+     if [ ! -d $HOME/.config/powerline ]; then
+        mkdir -p $HOME/.config/powerline
+        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline 2>/dev/null
+    else 
+        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline 2>/dev/null
+    fi
+
+
 #fi
 
 #echo -n "Do you want to use my bash configs? [N/y]"

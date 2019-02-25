@@ -26,6 +26,14 @@ if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
      pip install --user pytz
  else echo "python pip is not installed"
     fi
+     if [ ! -d $HOME/.config/powerline ]; then
+        mkdir -p $HOME/.config/powerline
+        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline 2>/dev/null
+    else 
+        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline 2>/dev/null
+    fi
+
+
 fi
 
 echo -n "Do you want to use my bash configs? [N/y]"
@@ -80,7 +88,7 @@ read -n 1 use_tmux_configs
 if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
 #	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
 	mv $INSTALLDIR/.tmux.conf $INSTALLDIR/.tmux.conf.old 2> /dev/null
-    #mkdir -p $HOME/.config/powerline 2> /dev/null
+    mkdir -p $HOME/.config/powerline 2> /dev/null
     ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline
     ln -s $SCRIPTDIR/.tmux.conf $INSTALLDIR/.tmux.conf
 fi
