@@ -64,7 +64,9 @@ nmap [c [czz
 "buffer next and previous
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
-nnoremap bd :b#<bar>bw#<CR>
+"delete current buffer and switch to another
+nnoremap <expr> <silent> bd len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1 ? ':bd<CR>' : ':bp<CR>:bd #<CR>'
+"nnoremap bd :bp<bar>bw#<CR>
 
 " gO to create a new line below cursor in normal mode
 nmap g<C-O> o<ESC>k
