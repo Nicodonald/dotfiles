@@ -10,21 +10,12 @@
 		"brightgreen": 148,
 
 		"darkestcyan": 23,
-        "gothamcyan": 122,
-        "gothamdarkestcyan": 44,
 		"darkcyan": 74,
 		"mediumcyan": 117,
 		"brightcyan": 159,
 
 		"darkestblue": 24,
-        "gothamdarkestblue": 24,
 		"darkblue": 31,
-
-        "darkestmagenta": 53,
-        "darkmagenta": 89,
-        "magenta": 126,
-        "brightmagenta": 162,
-        "brightestmagenta": 198,
 
 		"red": 1,
 		"darkestred": 52,
@@ -36,8 +27,6 @@
 		"darkestpurple": 55,
 		"mediumpurple": 98,
 		"brightpurple": 189,
-
-        "deeppink": 125,
 
 		"darkorange": 94,
 		"mediumorange": 166,
@@ -62,12 +51,9 @@
 		"gray11": 234,
 		"gray90": 254,
 
-        "materialGray": 238,
-
 		"gray70": [249, "b3b3b3"],
 
 		"lightyellowgreen": 106,
-		"yellowgreen": 190,
 		"gold3": 178,
 		"orangered": 202,
 
