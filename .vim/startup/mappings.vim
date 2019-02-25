@@ -64,6 +64,7 @@ nmap [c [czz
 "buffer next and previous
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
+nnoremap bd :b#<bar>bw#<CR>
 
 " gO to create a new line below cursor in normal mode
 nmap g<C-O> o<ESC>k
