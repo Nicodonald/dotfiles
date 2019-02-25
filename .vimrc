@@ -20,6 +20,7 @@ Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'chrisbra/SudoEdit.vim'
+Plugin 'PProvost/vim-ps1'
 
 call vundle#end()
 
