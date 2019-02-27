@@ -10,7 +10,7 @@ set incsearch
 set wildmenu
 syntax enable
 set synmaxcol=0
-set term=screen-256color
+silent! set term=screen-256color
 set display=uhex
 set shortmess=aAIsT
 set cmdheight=2
@@ -56,7 +56,7 @@ set laststatus=2
 set ffs=unix,dos
 set mouse=
 set vb
-set ttym=xterm2
+silent! set ttym=xterm2
 
 set wrap
 

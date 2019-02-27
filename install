@@ -59,6 +59,7 @@ if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
 	ln -s $SCRIPTDIR/.vimrc $INSTALLDIR/.vimrc 2> /dev/null
     git clone https://github.com/VundleVim/Vundle.vim.git $SCRIPTDIR/.vim/bundle/Vundle.vim
     vim -c "PluginInstall" -c "qa!"
+    ln -s $SCRIPTDIR/.config/nvim $INSTALLDIR/.config/ 2 > /dev/null
 fi
 echo
 
@@ -75,6 +76,9 @@ if [ "$use_git_configs" == "Y" ] || [ "$use_git_configs" == "y" ]; then
     cp $SCRIPTDIR/.gitconfig $INSTALLDIR/.gitconfig
     sed -i "s/%%GITNAME%%/$git_name/" $INSTALLDIR/.gitconfig
     sed -i "s/%%GITEMAIL%%/$git_email/" $INSTALLDIR/.gitconfig
+    git config --global diff.tool vimdiff
+    git config --global difftool.prompt false
+    git config --global alias.d difftool
 fi
 
 if [ ! -d $INSTALLDIR/.node-completion ]; then

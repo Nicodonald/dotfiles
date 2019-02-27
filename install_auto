@@ -59,6 +59,7 @@ echo
 	ln -s $SCRIPTDIR/.vimrc $INSTALLDIR/.vimrc 2> /dev/null
     git clone https://github.com/VundleVim/Vundle.vim.git $SCRIPTDIR/.vim/bundle/Vundle.vim
     vim -c "PluginInstall" -c "qa!"
+    ln -s $SCRIPTDIR/.config/nvim $INSTALLDIR/.config/ 2 > /dev/null
 #fi
 echo
 
