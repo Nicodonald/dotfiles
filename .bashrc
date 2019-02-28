@@ -41,14 +41,20 @@ fi
 
 export PATH=$PATH":$HOME/bin/:$HOME/.local/bin"
 
-if [ -f ~/.local/bin/powerline-daemon ]; then 
- powerline-daemon -q
- POWERLINE_BASH_CONTINUATION=1
- POWERLINE_BASH_SELECT=1
- # repos cloné à l'installation
- if [ -f ~/repos/powerline/powerline/bindings/bash/powerline.sh ]; then  
-	 source ~/repos/powerline/powerline/bindings/bash/powerline.sh
- fi  
+if [[ $(python --version 2>&1) =~ 2\.7 ]]
+    then
+		 if [ -f ~/.local/bin/powerline-daemon ]; then 
+		 powerline-daemon -q
+		 POWERLINE_BASH_CONTINUATION=1
+		 POWERLINE_BASH_SELECT=1
+		 # repos cloné à l'installation
+		 if [ -f ~/repos/powerline/powerline/bindings/bash/powerline.sh ]; then  
+			 source ~/repos/powerline/powerline/bindings/bash/powerline.sh
+	 fi  
+fi
+       #echo "I have 2.7"
+    else
+        echo "Python less than 2.7, powerline requirements not met"
 fi
 
 #cd `cat ~/.prev_dir`
