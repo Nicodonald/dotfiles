@@ -18,4 +18,38 @@ alias follow=". ~/bin/follow"
 alias vdb="vim -c 'python debugger.run()'"
 alias tm='tmux attach'
 alias pyg='pygmentize -f 256 -O style=monokai'
+
+alias sctl='sudo systemctl'
+
+source /usr/share/bash-completion/completions/systemctl
+complete -F _systemctl sctl
+
+## Safety features
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'                    # 'rm -i' prompts for every file
+# safer alternative w/ timeout, not stored in history
+#alias rm=' timeout 3 rm -Iv --one-file-system'
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
+alias cls=' echo -ne "\033c"'       # clear screen for real (it does not work in Terminology)
+
+alias apt='sudo apt'
+alias yum='sudo yum'
+
+if [[ -f /usr/share/bash-completion/completions/apt ]]; then
+    source /usr/share/bash-completion/completions/apt
+    complete -F _apt apt
+fi
+
+
+if [[ -f /usr/share/bash-completion/completions/yum ]]; then
+    source /usr/share/bash-completion/completions/yum
+    complete -F _yum -o filenames yum yummain.py
+fi
+
+alias service='sudo service'
+complete -F _service service
 # vim: set ft=sh :
