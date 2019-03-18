@@ -27,10 +27,10 @@ if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
  else echo "python pip is not installed"
     fi
      if [ ! -d $HOME/.config/powerline ]; then
-        mkdir -p $HOME/.config/powerline
-        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline 2>/dev/null
+#        mkdir -p $HOME/.config/powerline
+        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/ 2>/dev/null
     else 
-        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline 2>/dev/null
+        ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/ 2>/dev/null
     fi
 
 
