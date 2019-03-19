@@ -19,10 +19,10 @@ alias vdb="vim -c 'python debugger.run()'"
 alias tm='tmux attach'
 alias pyg='pygmentize -f 256 -O style=monokai'
 
-alias sctl='sudo systemctl'
+alias sc='sudo systemctl'
 
 source /usr/share/bash-completion/completions/systemctl
-complete -F _systemctl sctl
+complete -F _systemctl sc
 
 ## Safety features
 alias cp='cp -i'
