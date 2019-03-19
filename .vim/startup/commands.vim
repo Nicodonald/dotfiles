@@ -10,3 +10,4 @@ command! DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | d
 
 command! JShint 80vnew +setlocal\ buftype=nofile\ bufhidden=hide\ noswapfile | r !jshint # --show-non-errors
 command! CR 80vnew +setlocal\ buftype=nofile\ bufhidden=hide\ noswapfile | r !php-cs-fixer fix # --diff --dry-run -vvv
+command Json :%!python -m json.tool
