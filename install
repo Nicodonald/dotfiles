@@ -53,6 +53,7 @@ echo -n "Do you want to use my vim configs? [N/y]"
 read -n 1 use_vim_configs
 
 if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
+    mkdir $INSTALLDIR/vimundo 2 > /dev/null
     mv $INSTALLDIR/.vim $INSTALLDIR/.vim.old
     mv $INSTALLDIR/.vimrc $INSTALLDIR/.vimrc.old
 	ln -s $SCRIPTDIR/.vim $INSTALLDIR/.vim 2> /dev/null
