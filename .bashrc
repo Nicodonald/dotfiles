@@ -62,13 +62,13 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # custom functions
-if [ -f /home/$USER/.bash/functions ]; then
-	. /home/$USER/.bash/functions
+if [ -f $HOME/.bash/functions ]; then
+	. $HOME/.bash/functions
 fi
 
 # custom functions
-if [ -f /home/$USER/.bash/aliases ]; then
-	. /home/$USER/.bash/aliases
+if [ -f $HOME/.bash/aliases ]; then
+	. $HOME/.bash/aliases
 fi
 
 #if tmux present then launch it
