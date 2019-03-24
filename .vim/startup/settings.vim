@@ -77,7 +77,7 @@ else
 endif
 
 let g:vdebug_options= {
-	\    "port" : 9000,
+	\    "port" : 9005,
 	\    "server" : 'localhost',
 	\    "timeout" : 20,
 	\    "on_close" : 'detach',
