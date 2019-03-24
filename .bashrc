@@ -120,4 +120,7 @@ for f in $(command ls ~/.node-completion); do
   f="$HOME/.node-completion/$f"
   test -f "$f" && . "$f"
 done
+
+#config XDEBUG
+export XDEBUG_CONFIG="idekey=vimsession"
 # }}}
