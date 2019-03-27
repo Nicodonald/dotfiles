@@ -15,5 +15,5 @@ augroup markdown
 augroup END
 augroup sh
 "    au! " clear augroup when reloading vimrc
-    autocmd Filetype sh set textwidth=78
+    autocmd Filetype sh set textwidth=98
 augroup END
