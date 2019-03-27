@@ -46,7 +46,7 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set foldcolumn=1
-set cc=+1,+2
+set colorcolumn=+1,+2
 
 set linespace=0
 set history=1000

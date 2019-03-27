@@ -13,4 +13,7 @@ autocmd BufNewFile,BufRead *.git/**
 augroup markdown
 	autocmd BufRead,BufNewFile *.mkd setfiletype mkd
 augroup END
-
+augroup sh
+"    au! " clear augroup when reloading vimrc
+    autocmd Filetype sh set textwidth=78
+augroup END
