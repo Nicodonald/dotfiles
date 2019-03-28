@@ -8,8 +8,16 @@ if [ "$1" == "-h" ] || [ "$1" == "-?" ] || [ "$1" == "--help" ]; then
     echo "require vim, xclip, tmux, python pip"
     exit
 fi
-echo -n "Do you want to use powerline ? [N/y]"
-read -n 1 use_powerline
+
+if [ "$1" == "auto" ] || [ "$1" == "-a" ] || [ "$1" == "--auto" ]; then
+    AUTO=true
+fi
+if [ "$AUTO" == "true" ]; then
+    use_powerline=Y
+else
+    echo -n "Do you want to use powerline ? [N/y]"
+    read -n 1 use_powerline
+fi
 
 if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
     if [ ! -d $HOME/repos ]; then
@@ -27,7 +35,7 @@ if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
  else echo "python pip is not installed"
     fi
      if [ ! -d $HOME/.config/powerline ]; then
-#        mkdir -p $HOME/.config/powerline
+        mkdir -p $HOME/.config/
         ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/ 2>/dev/null
     else 
         ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/ 2>/dev/null
@@ -36,8 +44,12 @@ if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
 
 fi
 
-echo -n "Do you want to use my bash configs? [N/y]"
-read -n 1 use_bash_configs
+if [ "$AUTO" == "true" ]; then
+    use_bash_configs=Y
+else
+    echo -n "Do you want to use my bash configs? [N/y]"
+    read -n 1 use_bash_configs
+fi
 
 if [ "$use_bash_configs" == "Y" ] || [ "$use_bash_configs" == "y" ]; then
 
@@ -49,8 +61,12 @@ if [ "$use_bash_configs" == "Y" ] || [ "$use_bash_configs" == "y" ]; then
 fi
 echo
 
-echo -n "Do you want to use my vim configs? [N/y]"
-read -n 1 use_vim_configs
+if [ "$AUTO" == "true" ]; then
+    use_vim_configs=Y
+else
+    echo -n "Do you want to use my vim configs? [N/y]"
+    read -n 1 use_vim_configs
+fi
 
 if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
     mkdir $INSTALLDIR/vimundo 2 > /dev/null
@@ -64,22 +80,24 @@ if [ "$use_vim_configs" == "Y" ] || [ "$use_vim_configs" == "y" ]; then
 fi
 echo
 
-echo -en "\nDo you want to use my git configs? [N/y]"
-read -n 1 use_git_configs
-
-if [ "$use_git_configs" == "Y" ] || [ "$use_git_configs" == "y" ]; then
-    echo -e "\nGit config settings"
-    echo -n "Name: "
-    read git_name
-    echo -ne "\nEmail: "
-    read git_email
-
-    cp $SCRIPTDIR/.gitconfig $INSTALLDIR/.gitconfig
-    sed -i "s/%%GITNAME%%/$git_name/" $INSTALLDIR/.gitconfig
-    sed -i "s/%%GITEMAIL%%/$git_email/" $INSTALLDIR/.gitconfig
-    git config --global diff.tool vimdiff
-    git config --global difftool.prompt false
-    git config --global alias.d difftool
+if [ ! "$AUTO" == "true" ]; then
+ echo -en "\nDo you want to use my git configs? [N/y]"
+ read -n 1 use_git_configs
+ 
+ if [ "$use_git_configs" == "Y" ] || [ "$use_git_configs" == "y" ]; then
+     echo -e "\nGit config settings"
+     echo -n "Name: "
+     read git_name
+     echo -ne "\nEmail: "
+     read git_email
+ 
+     cp $SCRIPTDIR/.gitconfig $INSTALLDIR/.gitconfig
+     sed -i "s/%%GITNAME%%/$git_name/" $INSTALLDIR/.gitconfig
+     sed -i "s/%%GITEMAIL%%/$git_email/" $INSTALLDIR/.gitconfig
+     git config --global diff.tool vimdiff
+     git config --global difftool.prompt false
+     git config --global alias.d difftool
+ fi
 fi
 
 if [ ! -d $INSTALLDIR/.node-completion ]; then
@@ -87,24 +105,30 @@ if [ ! -d $INSTALLDIR/.node-completion ]; then
 fi
 echo
 
-echo -en "\nDo you want to use my tmux configs? [N/y]"
-read -n 1 use_tmux_configs
-
-if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
-#	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
-	mv $INSTALLDIR/.tmux.conf $INSTALLDIR/.tmux.conf.old 2> /dev/null
-    mkdir -p $HOME/.config/powerline 2> /dev/null
-    ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline
-    ln -s $SCRIPTDIR/.tmux.conf $INSTALLDIR/.tmux.conf
+if [ ! "$AUTO" == "true" ]; then
+ echo -en "\nDo you want to use my tmux configs? [N/y]"
+ read -n 1 use_tmux_configs
+ 
+ if [ "$use_tmux_configs" == "Y" ] || [ "$use_tmux_configs" == "y" ]; then
+ #	mv $INSTALLDIR/.config $INSTALLDIR/.config.old 2> /dev/null
+ 	mv $INSTALLDIR/.tmux.conf $INSTALLDIR/.tmux.conf.old 2> /dev/null
+     mkdir -p $HOME/.config/powerline 2> /dev/null
+     ln -s $SCRIPTDIR/.config/powerline $INSTALLDIR/.config/powerline
+     ln -s $SCRIPTDIR/.tmux.conf $INSTALLDIR/.tmux.conf
+ fi
 fi
-echo
-echo -en "\nDo you want to use my zsh configs? [N/y]"
-read -n 1 use_zsh_configs
 
-if [ "$use_zsh_configs" == "Y" ] || [ "$use_zsh_configs" == "y" ]; then
-    mv $INSTALLDIR/.zshrc $INSTALLDIR/.zshrc.old 2> /dev/null
-	ln -s $SCRIPTDIR/.zshrc $INSTALLDIR/.zshrc 2> /dev/null
-    git clone https://github.com/zsh-users/antigen.git $INSTALLDIR/antigen
+echo
+
+if [ ! "$AUTO" == "true" ]; then
+ echo -en "\nDo you want to use my zsh configs? [N/y]"
+ read -n 1 use_zsh_configs
+ 
+ if [ "$use_zsh_configs" == "Y" ] || [ "$use_zsh_configs" == "y" ]; then
+     mv $INSTALLDIR/.zshrc $INSTALLDIR/.zshrc.old 2> /dev/null
+ 	ln -s $SCRIPTDIR/.zshrc $INSTALLDIR/.zshrc 2> /dev/null
+     git clone https://github.com/zsh-users/antigen.git $INSTALLDIR/antigen
+ fi
 fi
 echo
 #echo -e "\nInitializing submodules..."
