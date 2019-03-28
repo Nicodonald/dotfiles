@@ -30,7 +30,9 @@ if [ "$use_powerline" == "Y" ] || [ "$use_powerline" == "y" ]; then
     fi
     mkdir -p $HOME/.local/bin/
     if hash pip; then
-     pip install --user --editable=$HOME/repos/powerline/ && ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/
+     if pip install --user --editable=$HOME/repos/powerline/; then
+        ln -s $HOME/repos/powerline/scripts/powerline $HOME/.local/bin/ 2>/dev/null
+     fi
      pip install --user pytz
  else echo "python pip is not installed"
     fi
