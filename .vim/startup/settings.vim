@@ -1,4 +1,5 @@
 "============== General Settings ===============
+set foldmethod=indent
 set ignorecase
 set smartcase
 set foldlevel=999
