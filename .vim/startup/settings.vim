@@ -43,7 +43,7 @@ set fillchars=vert:¦
 set splitbelow
 set splitright
 
-set expandtab
+set noexpandtab
 set tabstop=4
 set shiftwidth=4
 set foldcolumn=1
